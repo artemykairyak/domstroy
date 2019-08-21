@@ -452,7 +452,7 @@ $(function(){
 
 	function showModal(modal) {
 		modal.removeClass('modal--disabled');
-		modal.css('opacity', '0');		
+		modal.css({'opacity': '0'});		
 		modal.animate({'opacity': '1'}, 200);
 	};
 
@@ -545,7 +545,7 @@ $(function(){
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-            iconImageHref: 'assets/img/icons/location.png',
+            iconImageHref: '/assets/img/icons/location.png',
             // Размеры метки.
             iconImageSize: [68, 68],
             iconImageOffset: [-12, 0]
@@ -555,6 +555,12 @@ $(function(){
 
 			myMap.geoObjects.add(myPlacemark);
 			myMap.behaviors.disable('scrollZoom');
+			myMap.behaviors.disable('drag');
+			myMap.container.fitToViewport();
+
+			if ($(window).width() < 840) {
+				myMap.setCenter([55.762681099950635, 37.75192034572300]);
+			}
 		});
 	}
 });

@@ -454,7 +454,6 @@ main {
 
 main #header {
   height: 100vh;
-  background: url("../img/main-header-bg.jpg") center no-repeat;
   background-size: cover;
 }
 
@@ -552,7 +551,7 @@ main .wrap .stats .flex-item .disc p:first-child {
 }
 
 main #services {
-  padding: 3.75rem 0 2rem;
+  padding: 3.75rem 0 60px;
   color: black;
 }
 
@@ -661,8 +660,8 @@ main .prices__link:hover a {
 /* ABOUT SECTION */
 
 #about {
-  background: url("img/about-bg.png") 0 0/cover no-repeat;
   padding: 68px 0 84px;
+  background: url("img/about-bg.jpg") 0 0/cover no-repeat;
 }
 
 .about__info {
@@ -926,6 +925,8 @@ main .prices__link:hover a {
 #contacts-section #map {
   position: absolute;
   left: -10.5%;
+  width: 110%;
+  height: 613px;
 }
 
 .ymaps-2-1-74-copyright__wrap {
@@ -964,7 +965,7 @@ main .prices__link:hover a {
 }
 
 .contacts__map .map-address {
-  width: 80%;
+  width: 90%;
   line-height: 1.7;
 }
 
@@ -1533,6 +1534,11 @@ main .prices__link:hover a {
   height: 63vh;
 }
 
+.articles .article a:not(.read-btn) {
+  height: 100%;
+  width: 100%;
+}
+
 .articles .article:hover {
   background: transparent;
 }
@@ -1814,6 +1820,8 @@ main .prices__link:hover a {
   color: #423C6D;
   font-size: 14px;
   line-height: 24px;
+  clear: both;
+  padding-top: 80px;
 }
 
 .article-text .to-articles-btn:hover span {
@@ -2034,10 +2042,11 @@ main .prices__link:hover a {
 }
 
 .prices .tab-content__item .service-price {
-  width: 8%;
+  width: 15%;
   font-weight: bold;
   font-size: 18px;
   color: #000;
+  text-align: right;
 }
 
 .prices__tabs {
@@ -2619,8 +2628,16 @@ main .prices__link:hover a {
     width: 45%;
   }
 
+  main .slide__bottom-labels {
+    flex-wrap: wrap;
+  }
+
   main .feedback__slide {
-    width: auto;
+    width: 70%;
+  }
+
+  main .slide__author {
+    width: 100%;
   }
 
   .articles .article:nth-child(4n) .article__title,
@@ -2696,10 +2713,6 @@ main .prices__link:hover a {
 
   .prices__tabs ul {
     width: 25%;
-  }
-
-  .prices .tab-name {
-    font-size: 10px;
   }
 
   .prices .tab-content {
@@ -2797,7 +2810,7 @@ main .prices__link:hover a {
   }
 
   main .feedback__slide {
-    width: 75%;
+    width: 80%;
   }
 
   main .advantages__item {
@@ -2905,6 +2918,14 @@ main .prices__link:hover a {
   .detail .photos__slider:before {
     display: none;
   }
+
+  #contacts-section #map {
+    height: 700px;
+  }
+
+  #contacts-section {
+    margin-bottom: 700px;
+  }
 }
 
 @media screen and (max-width: 734px) {
@@ -2942,7 +2963,10 @@ main .prices__link:hover a {
 
   #contacts-section #map {
     left: -5.3%;
-    width: 111% !important;
+  }
+
+  #contacts-section {
+    margin-bottom: 100vh;
   }
 
   .contacts__map .map-block {
@@ -3070,6 +3094,11 @@ main .prices__link:hover a {
   .object .object__photo {
     height: 27vw;
   }
+
+  #contacts-section #map {
+    width: 112%;
+    left: -5.5%;
+  }
 }
 
 @media screen and (max-width: 454px) {
@@ -3150,6 +3179,10 @@ main .prices__link:hover a {
     display: inline-block;
   }
 
+  main #services .services-box .services-item:last-child {
+    background: #000;
+  }
+
   main #services .all-services {
     line-height: 1.5;
     bottom: 0;
@@ -3179,6 +3212,10 @@ main .prices__link:hover a {
 
   main .prices__link a {
     font-size: 16px;
+  }
+
+  main #services .services-box .services-item:last-child {
+    background: red;
   }
 
   .feedback__slide {
@@ -3485,14 +3522,6 @@ main .prices__link:hover a {
 
   main .slide__show-all {
     left: 0;
-  }
-
-  main #contacts-section {
-    margin-bottom: 80vh;
-  }
-
-  main #contacts-section #map {
-    height: 80vh !important;
   }
 
   main .contacts__map .map-address {

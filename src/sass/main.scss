@@ -443,7 +443,6 @@ aside {
 main {
     #header {
         height: 100vh;
-        background: url(../img/main-header-bg.jpg) center no-repeat;
         background-size: cover;
 
         & * {
@@ -548,7 +547,7 @@ main {
     }
 
     #services {
-        padding: 3.75rem 0 2rem;
+        padding: 3.75rem 0 60px;
         color: black;
 
         h2{
@@ -671,9 +670,8 @@ main {
 /* ABOUT SECTION */
 
 #about {
-    background: url(img/about-bg.png) 0 0 / cover no-repeat;
     padding: 68px 0 84px; 
-
+    background: url(img/about-bg.jpg) 0 0 /cover no-repeat;
 
 }
 
@@ -959,6 +957,8 @@ main {
     #map {
         position: absolute;
         left: -10.5%;
+        width: 110%; 
+        height: 613px;
     }
 }
 
@@ -997,7 +997,7 @@ main {
     }
 
     .map-address {
-        width: 80%;
+        width: 90%;
         line-height: 1.7;
     }
 
@@ -1079,6 +1079,7 @@ main {
     position: fixed;
     z-index: 100;
     display: block;
+
 
     & * {
         box-sizing: border-box;
@@ -1580,11 +1581,17 @@ main {
             } 
         }
 
-        .feedback__slide {
-            width: auto; 
+        .slide__bottom-labels {
+            flex-wrap: wrap;
         }
 
+        .feedback__slide {
+            width: 70%; 
+        }
 
+        .slide__author {
+            width: 100%;
+        }
     }
 
     .articles {
@@ -1667,9 +1674,6 @@ main {
             ul {
                 width: 25%;
             }
-        }
-        .tab-name {
-            font-size: 10px;
         }
 
         .tab-content {
@@ -1775,7 +1779,7 @@ main {
        }
 
        .feedback__slide {
-            width: 75%;
+            width: 80%;
        }
 
        .advantages__item {
@@ -1896,9 +1900,14 @@ main {
        .photos__slider:after,  .photos__slider:before {
             display: none;
        }
+    }
 
+    #contacts-section #map {
+        height: 700px;
+    }
 
-     
+    #contacts-section {
+        margin-bottom: 700px;
     }
 }
 
@@ -1940,7 +1949,10 @@ main {
 
     #contacts-section #map {
         left: -5.3%;
-        width: 111% !important;
+    }
+
+    #contacts-section {
+        margin-bottom: 100vh;
     }
 
     .contacts__map .map-block {
@@ -1953,8 +1965,6 @@ main {
         h3 {
             padding-left: 20px;
         }
-
-
 
         .table-item__title {
             font-size: 16px;
@@ -2080,6 +2090,11 @@ main {
         }
     }
 
+    #contacts-section #map {
+        width: 112%;
+        left: -5.5%;
+    }
+
 }
 
 @media screen and (max-width: 454px) {
@@ -2146,6 +2161,9 @@ main {
                     width: 100%;
                     position: relative;
 
+                 
+                   
+
                     h4 {
                         &:after {
                             content: '';
@@ -2168,7 +2186,14 @@ main {
                         cursor: pointer;
                         display: inline-block;
                     }
-                } 
+
+                     &:last-child {
+                        background: #000;
+
+                        }    
+                }  
+
+
             }
 
             .all-services {
@@ -2202,6 +2227,10 @@ main {
         .prices__link a{
             font-size: 16px;
         }
+    }
+
+    main #services .services-box .services-item:last-child {
+        background: red;
     }
 
     .feedback__slide {
@@ -2534,14 +2563,6 @@ main {
             left: 0;
         }
 
-        #contacts-section {
-            margin-bottom: 80vh;
-
-            #map {
-                height: 80vh !important;
-            }
-        }
-
         .contacts__map .map-address {
             width: 100%;
         }
@@ -2715,6 +2736,11 @@ main {
         background: #F2F2F2;
         box-sizing: border-box;
         height: 63vh;
+
+        a:not(.read-btn) {
+            height: 100%;
+            width: 100%;
+        }
 
         &:hover {
             background: transparent;
@@ -2955,7 +2981,6 @@ main {
             line-height: 24px;
             margin-bottom: 10%;
 
-
             span {
                 margin-right: 15px;
                 font-size: 16px;
@@ -3003,6 +3028,8 @@ main {
             color: #423C6D;
             font-size: 14px;
             line-height: 24px;
+            clear: both;
+            padding-top: 80px;
 
              &:hover {
                 span {
@@ -3237,10 +3264,11 @@ main {
         }
 
         .service-price {
-            width: 8%;
+            width: 15%;
             font-weight: bold;
             font-size: 18px;
             color: #000;
+            text-align: right;
         }
     }
 
