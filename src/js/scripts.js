@@ -114,6 +114,14 @@ function showTab(tab, num, mobile) {
 	}		
 }
 
+function resize(parent, slide) {
+	slide.each(function() {
+		if ($(this).children('img').height() < parent.innerHeight()) {
+			$(this).children('img').parent().addClass('resized');
+		}	
+	});
+}
+
 $(function(){
 	String.prototype.trunc = function(n){
 		return this.substr(0,n-1)+(this.length>n?'...':'');
@@ -187,6 +195,12 @@ $(function(){
 
 
 	$(window).on('scroll', function(e) {
+		if($('.mobile-header').offset().top > 0) {
+			$('.mobile-header').addClass('mobile-header_blue-bg');
+		} else {
+			$('.mobile-header').removeClass('mobile-header_blue-bg');
+		}
+
 		if($('#about').length > 0) {
 			if ($('aside a:last').offset().top > $('#header').height() &&
 				$('aside a:last').offset().top < $('#about').offset().top) {
@@ -196,6 +210,7 @@ $(function(){
 		} else{
 			$('aside nav').addClass('white-color');
 		}
+		
 	}
 
 	if($('.object__gallery').length > 0) {
@@ -287,15 +302,14 @@ $(function(){
 					items: 2,
 					margin:32
 				}
-			},
-			onDrag: function() {
-				$('#feedback .owl-item:not(.center)').addClass('dr');
-			},
-			onDragged: function() {
-				$('#feedback .owl-item:not(.center)').removeClass('dr');
 			}
 		});
 	}
+
+	$(function() {
+	  // var settings = {fixedNavigation:true};
+	  $('.object__photo a').lightBox();
+	});
 	
 	$('.order-btn').on('click', function(e){
 		e.preventDefault();
@@ -310,6 +324,8 @@ $(function(){
 			nav: true,
 			center: true,
 			loop:true,
+			dots: false,
+			lazyload: true,
 
 			responsive: {
 				0: {
@@ -325,9 +341,15 @@ $(function(){
 					margin: 20
 				},
 				1400: {
-					items: 2,
+					items: 3,
 					margin:20
 				}
+			},
+			onInitialized: function() {
+				resize($('.detail .photos__slider'), $('.detail .photos__slide'));
+			},
+			onResized: function() {
+				resize($('.detail .photos__slider'), $('.detail .photos__slide'));
 			}
 		});
 	}	
@@ -550,7 +572,6 @@ $(function(){
 
 			myMap.geoObjects.add(myPlacemark);
 			myMap.behaviors.disable('scrollZoom');
-			myMap.behaviors.disable('drag');
 			myMap.container.fitToViewport();
 
 			if ($(window).width() < 840) {
