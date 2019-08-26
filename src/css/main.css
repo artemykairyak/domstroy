@@ -1151,6 +1151,37 @@ main .prices__link:hover a {
   display: none;
 }
 
+.modal__success {
+  top: 50%;
+  left: 50%;
+  transform: translate(-51%, -51%);
+  width: 20%;
+  background: #F3F3F3;
+  height: 400px;
+  padding: 26px 30px 33px;
+}
+
+.modal__success .success__h2 {
+  font-family: Oswald;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #000;
+  padding-bottom: 33px;
+  padding-top: 137px;
+}
+
+.modal__success .success__p {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000;
+  opacity: 0.55;
+  text-align: center;
+  padding-bottom: 156px;
+}
+
 .modal__callback {
   top: -50vh;
   left: 50%;
@@ -1172,27 +1203,6 @@ main .prices__link:hover a {
 .modal__callback .btn.error {
   color: #fff;
   font-size: .875rem;
-}
-
-.modal__callback .success__h2 {
-  font-family: Oswald;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 42px;
-  text-align: center;
-  color: #000;
-  padding-bottom: 33px;
-  padding-top: 137px;
-}
-
-.modal__callback .success__p {
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000;
-  opacity: 0.55;
-  text-align: center;
-  padding-bottom: 156px;
 }
 
 .modal__services {
@@ -1482,36 +1492,6 @@ main .prices__link:hover a {
 }
 
 /* MEDIA QUERIES */
-
-/*@media screen and (max-height: 850px) {
-    main .wrap .content p {
-        margin-bottom: 0px;
-    }
-
-    .wrap .stats .flex-item .disc {
-        display: inline-block;
-    }
-
-    main .wrap .stats .flex-item h1 {
-        font-size: 64px;
-    }
-
-    main #header .wrap .content {
-    margin-bottom: 15%;
-        margin-bottom: 10%;
-    }
-
-    main .wrap .stats {
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        height: 10vh;
-        margin-bottom: 15%;
-    }
-
-    main #header .stats .flex-item {
-        width: auto;
-    }
-}*/
 
 /* ARTICLES */
 
@@ -2961,7 +2941,8 @@ main .prices__link:hover a {
   }
 
   .modal__callback,
-  .modal__original {
+  .modal__original,
+  .modal__success {
     width: 40%;
   }
 
@@ -3091,7 +3072,8 @@ main .prices__link:hover a {
     left: -20px;
   }
 
-  .modal__callback {
+  .modal__callback,
+  .modal__success {
     width: 55%;
   }
 
@@ -3382,7 +3364,8 @@ main .prices__link:hover a {
     width: 95%;
   }
 
-  .modal__callback {
+  .modal__callback,
+  .modal__success {
     width: 70%;
     height: auto;
     max-height: 90vh;
@@ -3660,7 +3643,8 @@ main .prices__link:hover a {
     width: 80%;
   }
 
-  .modal__callback {
+  .modal__callback,
+  .modal__success {
     width: 80%;
     padding: 20px;
   }
